@@ -6,6 +6,7 @@ const cors=require("cors")
 const {userRouter}=require("./Router/User");
 const {flightRouter}=require("./Router/flight");
 const {bookingRouter}=require("./Router/booking")
+
 app.use(cors());
 app.use(express.json());
 app.use(flightRouter);
@@ -14,7 +15,9 @@ app.use(bookingRouter)
 
 
 
-
+app.get("/",(req,res)=>{
+    res.send("Welcome")
+})
 
 
 app.listen(process.env.port,async()=>{
